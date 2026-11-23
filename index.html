@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYQORΛ | AI Social Media Automation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Close navigation"
+        aria-controls="sidebar" aria-expanded="true">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3.75" y="4.75" width="16.5" height="14.5" rx="2.25"></rect>
+            <path d="M9 5v14"></path>
+            <path d="m15 9-3 3 3 3"></path>
+        </svg>
+    </button>
+    <button id="sidebar-backdrop" class="sidebar-backdrop" type="button" aria-label="Close navigation"></button>
+    <aside id="sidebar" class="sidebar">
+        <header class="sidebar-header">
+            <div class="logo">
+                <span class="logo-emblem">
+                    <img src="image/Futuristic Neon V Orbit Emblem.png" alt="VYQORΛ Logo">
+                </span>
+                <h1>VYQORΛ</h1>
+                <p>AI Social Media Automation</p>
+            </div>
+        </header>
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><button class="nav-button active" type="button" data-view="dashboard">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <rect x="3.5" y="3.5" width="7" height="7" rx="1.5"></rect>
+                        <rect x="13.5" y="3.5" width="7" height="7" rx="1.5"></rect>
+                        <rect x="3.5" y="13.5" width="7" height="7" rx="1.5"></rect>
+                        <rect x="13.5" y="13.5" width="7" height="7" rx="1.5"></rect>
+                    </svg>
+                    Dashboard
+                </button></li>
+                <li><button class="nav-button" type="button" data-view="chat">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6a7.5 7.5 0 1 1 17-3.5Z"></path>
+                        <path d="M8 11h.01M12 11h.01M16 11h.01"></path>
+                    </svg>
+                    AI Chat
+                </button></li>
+                <li><button class="nav-button" type="button" data-view="creator">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3.5 14 9l5.5 2-5.5 2-2 5.5-2-5.5-5.5-2L10 9l2-5.5Z"></path>
+                        <path d="m19 14 1.1 3 2.9 1-2.9 1-1.1 3-1-3-3-1 3-1 1-3Z"></path>
+                    </svg>
+                    Content Studio
+                </button></li>
+                <li><button class="nav-button" type="button" data-view="library">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect>
+                        <circle cx="9" cy="10" r="1.5"></circle>
+                        <path d="m5 17 4-4 3 3 3-4 4 5"></path>
+                    </svg>
+                    Post Publisher
+                </button></li>
+                <li><button class="nav-button" type="button" data-view="calendar">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <rect x="3.5" y="5" width="17" height="15.5" rx="2"></rect>
+                        <path d="M7.5 3.5v3M16.5 3.5v3M3.5 9.5h17M8 13h.01M12 13h.01M16 13h.01M8 16.5h.01M12 16.5h.01"></path>
+                    </svg>
+                    Content Calendar
+                </button></li>
+                <li><button class="nav-button" type="button" data-view="accounts">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <circle cx="9" cy="8" r="3.5"></circle>
+                        <path d="M2.8 20a6.2 6.2 0 0 1 12.4 0M16 5.5a3.5 3.5 0 0 1 0 6.8M17 14a5.8 5.8 0 0 1 4.2 5.6"></path>
+                    </svg>
+                    Social Accounts
+                </button></li>
+                <li><button class="nav-button" type="button" data-view="settings">
+                    <svg class="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="m19.4 15 .1.1a1.7 1.7 0 1 1-2.4 2.4l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a1.7 1.7 0 1 1-3.4 0v-.2a1.7 1.7 0 0 0-2.9-1.2l-.1.1a1.7 1.7 0 1 1-2.4-2.4l.1-.1a1.7 1.7 0 0 0-1.2-2.9H4a1.7 1.7 0 1 1 0-3.4h.2a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a1.7 1.7 0 1 1 2.4-2.4l.1.1a1.7 1.7 0 0 0 2.9-1.2V2a1.7 1.7 0 1 1 3.4 0v.2a1.7 1.7 0 0 0 2.9 1.2l.1-.1a1.7 1.7 0 1 1 2.4 2.4l-.1.1a1.7 1.7 0 0 0 1.2 2.9h.2a1.7 1.7 0 1 1 0 3.4h-.2a1.7 1.7 0 0 0-1.2 2.9Z"></path>
+                    </svg>
+                    Settings
+                </button></li>
+            </ul>
+        </nav>
+
+        <section class="history-panel" aria-labelledby="history-heading">
+            <div class="history-heading">
+                <h2 id="history-heading">Chat history</h2>
+                <button id="new-chat-button" class="new-chat-button" type="button"
+                    aria-label="Start a new chat">+</button>
+            </div>
+            <ul id="conversation-list" class="conversation-list" aria-label="Saved conversations"></ul>
+            <p class="storage-note">Saved in this browser only</p>
+        </section>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
+            <path d="M0 0h15v15H0z" fill="none" />
+            <path fill="currentColor"
+                d="m8.146 9.146l-.353.354l.707.707l.354-.353zM10.5 7.5l.354.354l.353-.354l-.353-.354zM8.854 5.146L8.5 4.793l-.707.707l.353.354zm-3.708 4l-.353.354l.707.707l.354-.353zM7.5 7.5l.354.354l.353-.354l-.353-.354zM5.854 5.146L5.5 4.793l-.707.707l.353.354zm3 4.708l2-2l-.708-.708l-2 2zm2-2.708l-2-2l-.708.708l2 2zm-5 2.708l2-2l-.708-.708l-2 2zm2-2.708l-2-2l-.708.708l2 2zM7.5 14A6.5 6.5 0 0 1 1 7.5H0A7.5 7.5 0 0 0 7.5 15zM14 7.5A6.5 6.5 0 0 1 7.5 14v1A7.5 7.5 0 0 0 15 7.5zM7.5 1A6.5 6.5 0 0 1 14 7.5h1A7.5 7.5 0 0 0 7.5 0zm0-1A7.5 7.5 0 0 0 0 7.5h1A6.5 6.5 0 0 1 7.5 1z" />
+        </svg>
+
+
+    </aside>
+
+
+    <main class="main-content">
+        <section id="dashboard-view" class="view">
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">YOUR WORKSPACE</p>
+                    <h1 id="dashboard-welcome">Welcome to VYOORA</h1>
+                    <p class="subtitle" id="dashboard-subtitle">Create and organize your social media content.</p>
+                </div>
+                <button class="create-button" id="dashboard-create-button" type="button">Create your first post</button>
+            </header>
+            <div class="dashboard-intro">
+                <div class="dashboard-intro-copy">
+                    <p class="dashboard-intro-kicker">CREATE · ORGANIZE · GROW</p>
+                    <h2>Everything your content needs, in one place.</h2>
+                    <p>Bring ideas, media, and post planning together in one creative workspace.</p>
+                </div>
+                <div class="dashboard-orbit" role="group" aria-label="Choose a social platform for Content Studio">
+                    <div class="social-orbit">
+                        <button class="orbit-icon instagram" type="button" data-platform="instagram" aria-label="Open Instagram in Content Studio" title="Instagram">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <defs>
+                                    <linearGradient id="instagram-gradient" x1="3" y1="21" x2="21" y2="3"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FFDC80"></stop>
+                                        <stop offset=".32" stop-color="#F77737"></stop>
+                                        <stop offset=".62" stop-color="#E1306C"></stop>
+                                        <stop offset="1" stop-color="#833AB4"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle class="icon-dot" cx="17.5" cy="6.8" r="1"></circle>
+                            </svg>
+                        </button>
+                        <button class="orbit-icon youtube" type="button" data-platform="youtube" aria-label="Open YouTube in Content Studio" title="YouTube">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 7.5a2.8 2.8 0 0 0-2-2C17.2 5 12 5 12 5s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12 29 29 0 0 0 3 16.5a2.8 2.8 0 0 0 2 2C6.8 19 12 19 12 19s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.5 29 29 0 0 0-.5-4.5Z"></path>
+                                <path class="icon-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path>
+                            </svg>
+                        </button>
+                        <button class="orbit-icon linkedin" type="button" data-platform="linkedin" aria-label="Open LinkedIn in Content Studio" title="LinkedIn">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16v16H4z"></path>
+                                <path d="M8 10v7M8 7v.1M12 17v-7m0 3a3 3 0 0 1 6 0v4"></path>
+                            </svg>
+                        </button>
+                        <button class="orbit-icon tiktok" type="button" data-platform="tiktok" aria-label="Open TikTok in Content Studio" title="TikTok">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1"></path>
+                                <path d="M14 3c.4 3 2.2 4.8 5 5"></path>
+                            </svg>
+                        </button>
+                        <button class="orbit-icon facebook" type="button" data-platform="facebook" aria-label="Open Facebook in Content Studio" title="Facebook">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <path d="M14.2 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H8v3h2.8v8"></path>
+                            </svg>
+                        </button>
+                        <button class="orbit-icon x-social" type="button" data-platform="twitter" aria-label="Open Twitter / X in Content Studio" title="Twitter / X">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <path d="m4 3 16 18M20 3 4 21M4.5 3h4.2l11 18h-4.2z"></path>
+                            </svg>
+                        </button>
+                        <button class="orbit-icon snapchat" type="button" data-platform="snapchat" aria-label="Open Snapchat in Content Studio" title="Snapchat">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3.2c-2.2 0-3.8 1.7-3.8 4.1 0 .7.1 1.5.2 2.2-.5.3-1.4.2-2-.2-.3-.2-.6-.1-.7.2-.1.4.4.8 1.1 1 .6.2 1.3.3 1.6.7.2.3-.1.7-.5 1.2-.7.9-1.8 1.9-3.2 2.5-.4.2-.4.7 0 .9.5.2 1 .3 1.4.3.4 0 .6.3.7.7.1.3.2.4.5.4 1.1 0 1.8.4 2.4 1 .6.5 1.2.8 2.3.8s1.7-.3 2.3-.8c.6-.6 1.3-1 2.4-1 .3 0 .4-.1.5-.4.1-.4.3-.7.7-.7.4 0 .9-.1 1.4-.3.4-.2.4-.7 0-.9-1.4-.6-2.5-1.6-3.2-2.5-.4-.5-.7-.9-.5-1.2.3-.4 1-.5 1.6-.7.7-.2 1.2-.6 1.1-1-.1-.3-.4-.4-.7-.2-.6.4-1.5.5-2 .2.1-.7.2-1.5.2-2.2 0-2.4-1.6-4.1-3.8-4.1Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <img class="dashboard-v-logo" src="image/Futuristic Neon V Orbit Emblem.png" alt="">
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-top"><span>Total Content</span><span class="stat-icon blue">▤</span></div>
+                    <h2>0</h2>
+                    <p>Content items <span>· Workspace insights</span></p>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Scheduled Posts</span><span class="stat-icon purple">◷</span></div>
+                    <h2>0</h2>
+                    <p>Upcoming posts <span>· Workspace insights</span></p>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Connected Accounts</span><span class="stat-icon green">◎</span></div>
+                    <h2 id="dashboard-connected-count">0</h2>
+                    <p>Connect an account <span>· Social Accounts</span></p>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-top"><span>Drafts</span><span class="stat-icon orange">✎</span></div>
+                    <h2>0</h2>
+                    <p>Saved drafts <span>· Workspace insights</span></p>
+                </article>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <h2>Quick Actions</h2>
+                    <p>What would you like to do today?</p>
+                </div>
+                <div class="actions-grid">
+                    <button class="action-card" type="button" data-view="creator">
+                        <span class="action-icon blue">✦</span>
+                        <h3>Create content</h3>
+                        <p>Create and organize captions, tags, and media in Content Studio.</p>
+                        <span class="action-link">Open Content Studio →</span>
+                    </button>
+                    <button type="button" class="action-card" data-view="library">
+                        <span class="action-icon purple">▤</span>
+                        <h3>Post Publisher</h3>
+                        <p>Choose accounts, preview posts, and manage publishing.</p>
+                        <span class="action-link">Open Publisher →</span>
+                    </button>
+                    <button type="button" class="action-card" data-view="calendar">
+                        <span class="action-icon green">◷</span>
+                        <h3>Plan Your Schedule</h3>
+                        <p>Organize your content and prepare your upcoming posts.</p>
+                        <span class="action-link">Manage Schedule →</span>
+                    </button>
+                </div>
+            </section>
+        </section>
+
+        <section id="chat-view" class="view chat-view" hidden>
+            <header class="chat-header">
+                <div>
+                    <p class="eyebrow">YOUR CONVERSATIONS</p>
+                    <h1>AI Chat</h1>
+                </div>
+                <button id="chat-new-button" class="create-button" type="button">+ New chat</button>
+            </header>
+            <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+            <p class="chat-notice">Your ideas are saved in this browser. AI replies aren't available yet.
+            </p>
+            <form id="chat-form" class="chat-form">
+                <label class="visually-hidden" for="chat-input">Describe your content idea</label>
+                <textarea id="chat-input" rows="1"
+                    placeholder="What are we creating? Try a caption, hook, or post idea..." required></textarea>
+                <button type="submit" aria-label="Save message">Send</button>
+            </form>
+            <p id="chat-status" class="chat-status" role="status"></p>
+        </section>
+
+        <section id="content-studio-view" class="view content-studio-view" hidden>
+            <header class="studio-header">
+                <div>
+                    <p class="eyebrow">CREATE &amp; REFINE</p>
+                    <h1>Content Studio</h1>
+                    <p class="subtitle">Create original content, then send it to the Post Publisher when it is ready.</p>
+                </div>
+                <button type="button" class="studio-badge" id="new-studio-content-btn">+ New Content</button>
+            </header>
+            <div class="creator-content">
+                <aside class="creator-history">
+                    <h2>Studio Content</h2>
+                    <ul id="studio-draft-list" class="library-list" aria-label="Content Studio drafts"></ul>
+                    <p class="library-empty" id="studio-draft-empty" hidden>No content yet.</p>
+                </aside>
+                <div class="creator-main">
+                    <form id="creator-form" class="creator-editor" hidden>
+                        <section class="creator-section" aria-labelledby="creator-basic-heading">
+                            <h2 id="creator-basic-heading">1. Basic Details</h2>
+                            <div class="creator-field">
+                                <label for="creator-title">Title <span aria-hidden="true">*</span></label>
+                                <input id="creator-title" type="text" maxlength="120" placeholder="Content title" required>
+                            </div>
+                            <div class="creator-field">
+                                <label for="creator-caption">Description / Caption</label>
+                                <textarea id="creator-caption" rows="5" maxlength="5000" placeholder="Write your caption..."></textarea>
+                                <span class="creator-character-count" id="creator-caption-count">0 / 5,000</span>
+                            </div>
+                            <div class="creator-field">
+                                <span class="field-label">Upload Video / Image</span>
+                                <label class="creator-drop-zone" id="creator-drop-zone" for="creator-media-file">
+                                    <span>Drop a video or image here, or choose a file</span>
+                                    <input id="creator-media-file" type="file" accept="image/*,video/*">
+                                </label>
+                                <div class="creator-media-preview" id="creator-media-preview">
+                                    <p id="creator-media-placeholder">Your image or video preview will appear here.</p>
+                                    <img id="creator-image-preview" alt="Content Studio image preview" hidden>
+                                    <video id="creator-video-preview" controls preload="metadata" hidden></video>
+                                </div>
+                                <div class="video-upload-actions">
+                                    <span id="creator-media-name">No media selected</span>
+                                    <button type="button" class="action-button secondary" id="remove-creator-media-btn" hidden>Remove media</button>
+                                </div>
+                                <div class="creator-media-library">
+                                    <button type="button" class="action-button secondary" id="studio-media-library-toggle">Pick from Media Library</button>
+                                    <div id="studio-media-library-picker" hidden>
+                                        <label class="visually-hidden" for="studio-media-library-select">Choose saved media</label>
+                                        <select id="studio-media-library-select">
+                                            <option value="">No saved media available</option>
+                                        </select>
+                                        <button type="button" class="action-button secondary" id="studio-media-library-load" disabled>Use selected media</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="creator-field">
+                                <label for="creator-thumbnail-file">Thumbnail</label>
+                                <input id="creator-thumbnail-file" type="file" accept="image/*">
+                                <button type="button" class="action-button secondary" id="capture-studio-frame" disabled>Pick a frame from the video</button>
+                                <div class="creator-thumbnail-preview" id="creator-thumbnail-preview" hidden>
+                                    <img id="creator-thumbnail-image" alt="Selected post thumbnail">
+                                    <span id="creator-thumbnail-name"></span>
+                                </div>
+                            </div>
+                            <div class="creator-field">
+                                <label for="creator-tag-input">Tags</label>
+                                <div class="creator-tag-entry">
+                                    <input id="creator-tag-input" type="text" placeholder="Type a tag and press Enter">
+                                </div>
+                                <ul class="creator-tags-list" id="creator-tags-list" aria-label="Added tags"></ul>
+                            </div>
+                        </section>
+
+                        <section class="creator-section" aria-labelledby="creator-settings-heading">
+                            <h2 id="creator-settings-heading">2. Before Setting / Where Should This Go</h2>
+                            <fieldset class="creator-field">
+                                <legend class="field-label">Select Platforms</legend>
+                                <div class="creator-platform-picker" id="creator-platform-picker">
+                                    <label><input type="checkbox" data-creator-platform="tiktok" checked> TikTok</label>
+                                    <label><input type="checkbox" data-creator-platform="instagram" checked> Instagram</label>
+                                    <label><input type="checkbox" data-creator-platform="youtube" checked> YouTube Shorts</label>
+                                    <label><input type="checkbox" data-creator-platform="facebook" checked> Facebook</label>
+                                    <label><input type="checkbox" data-creator-platform="twitter" checked> X</label>
+                                </div>
+                            </fieldset>
+                            <div class="creator-field creator-account-row">
+                                <label for="creator-preview-platform">Select Account</label>
+                                <select id="creator-preview-platform" aria-label="Platform for account selection">
+                                    <option value="tiktok">TikTok</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="youtube">YouTube Shorts</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="twitter">X</option>
+                                </select>
+                                <select id="creator-account-select" aria-label="Select connected account">
+                                    <option value="">No account connected</option>
+                                </select>
+                                <button type="button" class="action-button secondary" id="creator-connect-account" hidden>Connect Account</button>
+                            </div>
+                            <div class="creator-field creator-two-columns">
+                                <div>
+                                    <label for="creator-format">Format</label>
+                                    <select id="creator-format">
+                                        <option value="short">Short</option>
+                                        <option value="reel">Reel</option>
+                                        <option value="post">Post</option>
+                                        <option value="carousel">Carousel</option>
+                                        <option value="story">Story</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="creator-playlist">Playlist / Series</label>
+                                    <input id="creator-playlist" type="text" placeholder="Creator Tips Ep. 12">
+                                </div>
+                            </div>
+                            <div class="creator-field creator-two-columns">
+                                <div>
+                                    <label for="creator-schedule-date">Schedule Date</label>
+                                    <input id="creator-schedule-date" type="date">
+                                </div>
+                                <div>
+                                    <label for="creator-schedule-time">Schedule Time</label>
+                                    <input id="creator-schedule-time" type="time">
+                                </div>
+                            </div>
+                            <section class="creator-live-preview" aria-labelledby="creator-live-preview-heading">
+                                <div>
+                                    <span class="field-label">CHECK PLACE / LIVE PREVIEW</span>
+                                    <h3 id="creator-live-preview-heading">Your post preview</h3>
+                                    <p id="creator-posting-target">Posting to: select an account on a platform</p>
+                                </div>
+                                <article class="creator-preview-card">
+                                    <img id="creator-live-thumbnail" alt="Post thumbnail preview" hidden>
+                                    <div>
+                                        <strong id="creator-live-title">Your title will appear here</strong>
+                                        <p id="creator-live-caption">Your caption will appear here.</p>
+                                    </div>
+                                </article>
+                            </section>
+                        </section>
+
+                        <section class="creator-section" aria-labelledby="creator-audience-heading">
+                            <h2 id="creator-audience-heading">3. Audience &amp; Visibility</h2>
+                            <div class="creator-field creator-two-columns">
+                                <div>
+                                    <label for="creator-visibility">Visibility</label>
+                                    <select id="creator-visibility">
+                                        <option value="public">Public</option>
+                                        <option value="private">Private</option>
+                                        <option value="unlisted">Unlisted</option>
+                                        <option value="scheduled">Scheduled</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="creator-made-for-kids">Made for Kids</label>
+                                    <select id="creator-made-for-kids">
+                                        <option value="no">No</option>
+                                        <option value="yes">Yes</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="creator-audience">Audience</label>
+                                    <select id="creator-audience">
+                                        <option value="everyone">Everyone</option>
+                                        <option value="18+">18+</option>
+                                        <option value="followers">Followers Only</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="creator-language">Language</label>
+                                    <select id="creator-language">
+                                        <option value="">Select language</option>
+                                        <option value="en">English</option>
+                                        <option value="es">Spanish</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">German</option>
+                                        <option value="it">Italian</option>
+                                        <option value="pt">Portuguese</option>
+                                        <option value="ja">Japanese</option>
+                                        <option value="ko">Korean</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="creator-location">Location</label>
+                                    <input id="creator-location" type="text" placeholder="Add a location">
+                                </div>
+                                <div>
+                                    <label for="creator-product-link">Add Product Link (optional)</label>
+                                    <input id="creator-product-link" type="url" placeholder="https://">
+                                </div>
+                            </div>
+                            <div class="creator-toggle-list">
+                                <label><input id="creator-allow-comments" type="checkbox" checked> Allow Comments</label>
+                                <label><input id="creator-allow-remix" type="checkbox" checked> Allow Duet / Stitch / Remix</label>
+                                <label><input id="creator-paid-promotion" type="checkbox"> Paid Promotion / Brand Deal</label>
+                            </div>
+                        </section>
+
+                        <section class="creator-section" aria-labelledby="creator-copyright-heading">
+                            <h2 id="creator-copyright-heading">4. Copyright Check</h2>
+                            <div class="creator-copyright-check" id="creator-copyright-check" aria-live="polite">
+                                <strong>Copyright Check</strong>
+                                <p id="creator-copyright-status">Upload media to run a copyright check.</p>
+                                <ul>
+                                    <li>Music: <span id="creator-copyright-music">Not scanned</span></li>
+                                    <li>Video: <span id="creator-copyright-video">Not scanned</span></li>
+                                    <li>Caption: <span id="creator-copyright-caption">Not scanned</span></li>
+                                </ul>
+                                <span class="creator-copyright-note">This is a soft check. You can still send content that needs review.</span>
+                            </div>
+                        </section>
+
+                        <section class="creator-section" aria-labelledby="creator-actions-heading">
+                            <h2 id="creator-actions-heading">5. Actions</h2>
+                            <div class="creator-actions">
+                                <button type="button" class="action-button secondary" id="save-creator-draft-btn">Save as Draft</button>
+                                <button type="button" class="action-button primary" id="send-to-publisher-btn">Send with These Settings</button>
+                                <button type="button" class="action-button secondary" id="clear-creator-form-btn">Clear Form</button>
+                            </div>
+                        </section>
+                    </form>
+                    <div class="creator-empty" id="creator-empty">
+                        <span class="creator-empty-icon" aria-hidden="true">✦</span>
+                        <h2>No content yet</h2>
+                        <p>Create your first post in VYOORA Content Studio.</p>
+                        <button type="button" class="create-button" id="creator-empty-new-btn">+ New Content</button>
+                    </div>
+                    <p id="creator-status" class="chat-status" role="status" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="studio-view" class="view studio-view" hidden>
+            <header class="studio-header">
+                <div>
+                    <p class="eyebrow">POST PUBLISHER</p>
+                    <h2>Post Publisher</h2>
+                    <p class="subtitle">Import prepared content, choose accounts, and schedule or publish.</p>
+                </div>
+                <button type="button" class="studio-badge" id="new-content-btn">+ New Post</button>
+            </header>
+            <div class="publisher-import">
+                <div>
+                    <h3>Import from Content Studio</h3>
+                    <p>Bring a saved studio draft into the publisher to prepare it for distribution.</p>
+                </div>
+                <div class="publisher-import-controls">
+                    <label class="visually-hidden" for="import-studio-select">Choose a Content Studio draft</label>
+                    <select id="import-studio-select">
+                        <option value="">Select a studio draft</option>
+                    </select>
+                    <button type="button" class="action-button secondary" id="import-studio-btn">Import draft</button>
+                </div>
+            </div>
+            <div class="studio-content">
+                <div class="studio-sidebar">
+                    <h3>Post History</h3>
+                    <ul id="library-list" class="library-list" aria-label="Post history"></ul>
+                    <p class="library-empty" id="library-empty" hidden>No posts yet. Create your first post.</p>
+                </div>
+                <div class="studio-main">
+                    <div class="studio-preview" id="studio-preview">
+                        <p class="preview-placeholder" id="preview-placeholder">Select a post to edit or create a new post.</p>
+                        <form id="content-form" hidden>
+                            <div class="preview-field">
+                                <label for="edit-title">Post title</label>
+                                <input type="text" id="edit-title" placeholder="Content title">
+                            </div>
+                            <div class="preview-field">
+                                <label for="edit-caption">Post text</label>
+                                <textarea id="edit-caption" rows="5" maxlength="2200" placeholder="Write a caption or message for your post..."></textarea>
+                                <span class="caption-count" id="caption-count">0 / 2,200</span>
+                            </div>
+                            <div class="preview-field">
+                                <label for="schedule-at">Schedule date and time</label>
+                                <input type="datetime-local" id="schedule-at">
+                            </div>
+                            <div class="preview-field">
+                                <span class="field-label">Social platforms</span>
+                                <div class="platform-picker" id="edit-platform" aria-label="Choose social platforms">
+                                    <label><input type="checkbox" value="facebook"> Facebook</label>
+                                    <label><input type="checkbox" value="instagram"> Instagram</label>
+                                    <label><input type="checkbox" value="linkedin"> LinkedIn</label>
+                                    <label><input type="checkbox" value="snapchat"> Snapchat</label>
+                                    <label><input type="checkbox" value="tiktok"> TikTok</label>
+                                    <label><input type="checkbox" value="twitter"> Twitter / X</label>
+                                    <label><input type="checkbox" value="youtube"> YouTube</label>
+                                </div>
+                            </div>
+                            <div class="preview-field">
+                                <span class="field-label">Connected social accounts</span>
+                                <div class="publisher-account-picker" id="publisher-account-picker">
+                                    <p class="publisher-account-empty">Select a platform to choose its connected account.</p>
+                                </div>
+                            </div>
+                            <div class="preview-field">
+                                <label for="content-media-file">Upload video or picture</label>
+                                <input id="content-media-file" type="file" accept="video/*,image/*">
+                                <video id="content-video-preview" controls preload="metadata" hidden></video>
+                                <img id="content-image-preview" alt="Uploaded media preview" hidden>
+                                <div class="video-upload-actions">
+                                    <span id="content-video-name">No media selected</span>
+                                    <button type="button" class="action-button secondary" id="remove-content-video-btn" hidden>Remove media</button>
+                                </div>
+                            </div>
+                            <section class="live-post-preview" id="live-post-preview" aria-labelledby="live-preview-heading">
+                                <div class="live-preview-heading">
+                                    <div>
+                                        <span class="field-label">LIVE PREVIEW</span>
+                                        <h3 id="live-preview-heading">Your post</h3>
+                                    </div>
+                                    <label class="visually-hidden" for="live-preview-platform-select">Preview platform</label>
+                                    <select id="live-preview-platform-select" class="live-preview-platforms" aria-label="Preview platform">
+                                        <option value="instagram">Instagram</option>
+                                    </select>
+                                </div>
+                                <div class="live-preview-account">
+                                    <span class="live-preview-avatar" aria-hidden="true">V</span>
+                                    <div>
+                                        <strong id="live-preview-account-name">Choose a connected account</strong>
+                                        <span id="live-preview-platform-label">Instagram</span>
+                                    </div>
+                                </div>
+                                <p id="live-preview-caption" class="live-preview-caption">Your post text will appear here.</p>
+                                <div id="live-preview-media" class="live-preview-media">
+                                    <p id="live-preview-placeholder">Uploaded image or video will appear here.</p>
+                                    <img id="live-preview-image" alt="Live post image preview" hidden>
+                                    <video id="live-preview-video" controls preload="metadata" hidden></video>
+                                </div>
+                            </section>
+                            <section class="youtube-details" id="youtube-details" hidden aria-labelledby="youtube-details-title">
+                                <h3 id="youtube-details-title">YouTube Studio details</h3>
+                                <div class="preview-field">
+                                    <label for="youtube-title">VIDEO TITLE</label>
+                                    <input id="youtube-title" type="text" maxlength="100" placeholder="Untitled content">
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-description">Description</label>
+                                    <textarea id="youtube-description" rows="5" maxlength="5000" placeholder="Describe your video"></textarea>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-thumbnail-source">Choose a thumbnail</label>
+                                    <select id="youtube-thumbnail-source">
+                                        <option value="none" selected>None</option>
+                                        <option value="url">Use an image URL</option>
+                                        <option value="upload">Upload my own image</option>
+                                        <option value="video">Choose a frame from a video</option>
+                                    </select>
+                                </div>
+                                <div class="preview-field" id="youtube-thumbnail-url-field">
+                                    <label for="youtube-thumbnail">Thumbnail image URL</label>
+                                    <input id="youtube-thumbnail" type="url" placeholder="https://example.com/thumbnail.jpg">
+                                </div>
+                                <div class="preview-field" id="youtube-thumbnail-file-field" hidden>
+                                    <label for="youtube-thumbnail-file">Upload thumbnail</label>
+                                    <input id="youtube-thumbnail-file" type="file" accept="image/*">
+                                </div>
+                                <div class="preview-field" id="youtube-thumbnail-video-field" hidden>
+                                    <label for="youtube-thumbnail-video-file">Choose a video, then pause at the frame to use</label>
+                                    <input id="youtube-thumbnail-video-file" type="file" accept="video/*">
+                                    <video id="youtube-thumbnail-video" controls preload="metadata" hidden></video>
+                                    <button type="button" class="action-button secondary" id="youtube-capture-frame" disabled>Use current frame</button>
+                                </div>
+                                <div class="youtube-thumbnail-preview" id="youtube-thumbnail-preview" hidden>
+                                    <img id="youtube-thumbnail-image" alt="YouTube thumbnail preview">
+                                    <p id="youtube-thumbnail-name"></p>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-visibility">Visibility</label>
+                                    <select id="youtube-visibility">
+                                        <option value="public">Public</option>
+                                        <option value="unlisted">Unlisted</option>
+                                        <option value="private">Private</option>
+                                    </select>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-audience">Audience</label>
+                                    <select id="youtube-audience">
+                                        <option value="not-made-for-kids">No, it's not made for kids</option>
+                                        <option value="made-for-kids">Yes, it's made for kids</option>
+                                    </select>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-tags">Tags</label>
+                                    <input id="youtube-tags" type="text" placeholder="Add tags separated by commas">
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-category">Category</label>
+                                    <select id="youtube-category">
+                                        <option value="people-blogs">People &amp; Blogs</option>
+                                        <option value="entertainment">Entertainment</option>
+                                        <option value="education">Education</option>
+                                        <option value="howto-style">Howto &amp; Style</option>
+                                        <option value="gaming">Gaming</option>
+                                        <option value="science-technology">Science &amp; Technology</option>
+                                        <option value="music">Music</option>
+                                        <option value="news-politics">News &amp; Politics</option>
+                                        <option value="sports">Sports</option>
+                                        <option value="travel-events">Travel &amp; Events</option>
+                                        <option value="film-animation">Film &amp; Animation</option>
+                                    </select>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-language">Video language</label>
+                                    <input id="youtube-language" type="search" list="youtube-language-options" placeholder="Search or type a language (optional)">
+                                    <datalist id="youtube-language-options"></datalist>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-license">License</label>
+                                    <select id="youtube-license">
+                                        <option value="standard">Standard YouTube License</option>
+                                        <option value="creative-commons">Creative Commons - Attribution</option>
+                                    </select>
+                                </div>
+                                <div class="preview-field">
+                                    <label for="youtube-comments">Comments</label>
+                                    <select id="youtube-comments">
+                                        <option value="allow">Allow all comments</option>
+                                        <option value="hold">Hold potentially inappropriate comments</option>
+                                        <option value="disable">Disable comments</option>
+                                    </select>
+                                </div>
+                                <label class="youtube-checkbox"><input id="youtube-embedding" type="checkbox" checked> Allow embedding</label>
+                                <label class="youtube-checkbox"><input id="youtube-notify" type="checkbox" checked> Notify subscribers</label>
+                            </section>
+
+                            <div id="social-platform-details"></div>
+                            <div class="preview-actions">
+                                <button type="button" class="action-button secondary" id="save-draft-btn">Save as Draft</button>
+                                <button type="button" class="action-button primary" id="save-content-btn">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="studio-actions">
+                        <p id="studio-status" class="chat-status" role="status"></p>
+                        <button type="button" class="action-button" id="schedule-post-btn">Schedule Post</button>
+                        <button type="button" class="action-button secondary" id="mark-failed-btn">Mark Failed</button>
+                        <button type="button" class="action-button primary" id="publish-now-btn">Publish</button>
+                    </div>
+                </div>
+            </div>
+                    <div id="publisher-command" class="publisher-command" aria-label="Post Publisher Distribution Command">
+                        <aside class="publisher-inbox">
+                            <div class="publisher-panel-heading">
+                                <div>
+                                    <p class="publisher-kicker">INBOX</p>
+                                    <h3>Finished posts</h3>
+                                </div>
+                                <span id="publisher-draft-count" class="publisher-count">0</span>
+                            </div>
+                            <div id="publisher-inbox-list" class="publisher-inbox-list"></div>
+                        </aside>
+
+                        <section class="publisher-canvas" aria-label="Platform preview versions">
+                            <div class="publisher-panel-heading publisher-canvas-heading">
+                                <div>
+                                    <p class="publisher-kicker">DISTRIBUTION</p>
+                                    <h3 id="publisher-selected-title">Select a finished post</h3>
+                                </div>
+                                <select id="publisher-status" class="publisher-status-select" aria-label="Post status">
+                                    <option value="idea">Idea</option>
+                                    <option value="draft">Draft</option>
+                                    <option value="scheduled">Scheduled</option>
+                                    <option value="published">Published</option>
+                                    <option value="failed">Failed</option>
+                                </select>
+                            </div>
+                            <div id="publisher-previews" class="publisher-previews"></div>
+                            <div class="publisher-actions">
+                                <button id="publisher-publish-btn" class="publisher-action-primary" type="button">Publish</button>
+                                <button id="publisher-failed-btn" class="publisher-action-secondary" type="button">Simulate Failed</button>
+                                <button id="publisher-analytics-btn" class="publisher-action-secondary" type="button" hidden>Track in Analytics</button>
+                            </div>
+                        </section>
+
+                        <aside class="publisher-queue">
+                            <div class="publisher-panel-heading">
+                                <div>
+                                    <p class="publisher-kicker">PUBLISH QUEUE</p>
+                                    <h3>This week</h3>
+                                </div>
+                            </div>
+                            <div id="publisher-week" class="publisher-week"></div>
+                            <p id="publisher-schedule-warning" class="publisher-schedule-warning" role="status" aria-live="polite"></p>
+                        </aside>
+                    </div>
+        </section>
+
+        <section id="calendar-view" class="view calendar-view" hidden>
+            <header class="calendar-header">
+                <div>
+                    <p class="eyebrow">PLAN &amp; PUBLISH</p>
+                    <h1>Content Calendar</h1>
+                    <p class="subtitle">Keep your scheduled social content organized.</p>
+                </div>
+                <div class="calendar-controls">
+                    <button class="calendar-control" id="calendar-prev" type="button" aria-label="Previous month">‹</button>
+                    <button class="calendar-control" id="calendar-today" type="button">Today</button>
+                    <button class="calendar-control" id="calendar-next" type="button" aria-label="Next month">›</button>
+                    <button class="create-button" id="calendar-new-content" type="button">+ New Content</button>
+                </div>
+            </header>
+            <section class="calendar-panel" aria-label="Monthly content calendar">
+                <h2 class="calendar-month" id="calendar-month" aria-live="polite"></h2>
+                <div class="calendar-weekdays" aria-hidden="true">
+                    <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+                    <span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <div class="calendar-grid" id="calendar-grid"></div>
+                <div class="calendar-empty" id="calendar-empty" hidden>
+                    <p>No scheduled content yet</p>
+                    <button class="create-button" id="calendar-first-post-button" type="button">Schedule your first post</button>
+                </div>
+            </section>
+        </section>
+
+        <section id="accounts-view" class="view accounts-view" hidden>
+            <header class="accounts-header">
+                <div>
+                    <p class="eyebrow">YOUR CHANNELS</p>
+                    <h1>Social Accounts</h1>
+                    <p class="subtitle">Account details are stored in this browser. Platform authorization and publishing are not enabled.</p>
+                </div>
+                <span class="accounts-count">0 connected</span>
+            </header>
+            <p id="accounts-status" class="accounts-status" role="status" aria-live="polite"></p>
+            <div class="accounts-grid">
+                <article class="account-card" data-account-platform="instagram">
+                    <div class="account-card-top">
+                        <span class="account-icon instagram" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle class="account-icon-dot" cx="17.5" cy="6.8" r="1"></circle>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>Instagram</h2>
+                    <p>Connect an Instagram professional account for your content workflow.</p>
+                    <button class="account-connect" type="button" data-social-connect="instagram">Add account details</button>
+                </article>
+                <article class="account-card" data-account-platform="facebook">
+                    <div class="account-card-top">
+                        <span class="account-icon facebook" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M14.2 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H8v3h2.8v8"></path>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>Facebook</h2>
+                    <p>Connect a Facebook Page to prepare content for your audience.</p>
+                    <button class="account-connect" type="button" data-social-connect="facebook">Add account details</button>
+                </article>
+                <article class="account-card" data-account-platform="youtube">
+                    <div class="account-card-top">
+                        <span class="account-icon youtube" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M21 7.5a2.8 2.8 0 0 0-2-2C17.2 5 12 5 12 5s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12 29 29 0 0 0 3 16.5a2.8 2.8 0 0 0 2 2C6.8 19 12 19 12 19s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.5 29 29 0 0 0-.5-4.5Z"></path>
+                                <path class="account-icon-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>YouTube</h2>
+                    <p>Connect a channel to organize video content and publishing details.</p>
+                    <button class="account-connect" type="button" data-social-connect="youtube">Add account details</button>
+                </article>
+                <article class="account-card" data-account-platform="tiktok">
+                    <div class="account-card-top">
+                        <span class="account-icon tiktok" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1M14 3c.4 3 2.2 4.8 5 5"></path>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>TikTok</h2>
+                    <p>Connect your profile to prepare short-form video content.</p>
+                    <button class="account-connect" type="button" data-social-connect="tiktok">Add account details</button>
+                </article>
+                <article class="account-card" data-account-platform="linkedin">
+                    <div class="account-card-top">
+                        <span class="account-icon linkedin" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16v16H4zM8 10v7M8 7v.1M12 17v-7m0 3a3 3 0 0 1 6 0v4"></path>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>LinkedIn</h2>
+                    <p>Connect a profile or Page for your professional content.</p>
+                    <button class="account-connect" type="button" data-social-connect="linkedin">Add account details</button>
+                </article>
+                <article class="account-card" data-account-platform="twitter">
+                    <div class="account-card-top">
+                        <span class="account-icon x-social" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="m4 3 16 18M20 3 4 21M4.5 3h4.2l11 18h-4.2z"></path>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>X (Twitter)</h2>
+                    <p>Connect your account to prepare posts for X.</p>
+                    <button class="account-connect" type="button" data-social-connect="twitter">Add account details</button>
+                </article>
+                <article class="account-card" data-account-platform="snapchat">
+                    <div class="account-card-top">
+                        <span class="account-icon snapchat" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3.2c-2.2 0-3.8 1.7-3.8 4.1 0 .7.1 1.5.2 2.2-.5.3-1.4.2-2-.2-.3-.2-.6-.1-.7.2-.1.4.4.8 1.1 1 .6.2 1.3.3 1.6.7.2.3-.1.7-.5 1.2-.7.9-1.8 1.9-3.2 2.5-.4.2-.4.7 0 .9.5.2 1 .3 1.4.3.4 0 .6.3.7.7.1.3.2.4.5.4 1.1 0 1.8.4 2.4 1 .6.5 1.2.8 2.3.8s1.7-.3 2.3-.8c.6-.6 1.3-1 2.4-1 .3 0 .4-.1.5-.4.1-.4.3-.7.7-.7.4 0 .9-.1 1.4-.3.4-.2.4-.7 0-.9-1.4-.6-2.5-1.6-3.2-2.5-.4-.5-.7-.9-.5-1.2.3-.4 1-.5 1.6-.7.7-.2 1.2-.6 1.1-1-.1-.3-.4-.4-.7-.2-.6.4-1.5.5-2 .2.1-.7.2-1.5.2-2.2 0-2.4-1.6-4.1-3.8-4.1Z"></path>
+                            </svg>
+                        </span>
+                        <span class="account-state">Not connected</span>
+                    </div>
+                    <h2>Snapchat</h2>
+                    <p>Connect your profile to prepare content for Snapchat.</p>
+                    <button class="account-connect" type="button" data-social-connect="snapchat">Add account details</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="settings-view" class="view settings-view" hidden>
+            <header class="accounts-header">
+                <div>
+                    <p class="eyebrow">PREFERENCES</p>
+                    <h1>Settings</h1>
+                    <p class="subtitle">Manage your saved workspace content.</p>
+                </div>
+            </header>
+            <section class="content-section">
+                <div class="section-heading">
+                    <h2>Testing</h2>
+                    <p>Reset removes saved posts from this browser.</p>
+                </div>
+                <button id="clear-posts-button" class="action-button secondary" type="button">Clear All / Reset</button>
+                <p id="settings-status" class="chat-status" role="status" aria-live="polite"></p>
+            </section>
+        </section>
+
+    </main>
+
+    <script type="module" src="script.js?v=local-store-v1"></script>
+</body>
+
+</html>
